@@ -1,0 +1,134 @@
+$lightgray: #eaeaea;
+$gray: #adadad;
+$darkgray: #666666;
+$basecolor: #333333;
+$green: #009e4a;
+$red: #db4433;
+
+html{
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+}
+.container{
+  position: relative;
+}
+.popup_wrap{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  max-width: 728px;
+  margin: 0 auto;
+}
+.popup {
+  position: relative;
+  // padding: 191px 40px 40px 40px;
+  padding-bottom: 40px;
+  background: $lightgray no-repeat;
+}
+.popup__body{
+  max-width: 648px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 40px 65px 40px 40px;
+}
+
+.popup__header {
+  height: 318px;
+  // position: absolute;
+  background:url(images/headform.jpg);
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 40px 42px 0 42px;
+  margin-bottom: -126px;
+
+}
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #ffffff;
+}
+.greeting{
+  color: $red;
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.title{
+  font-weight: 800;
+  color: #ffffff;
+  font-size: 48px;
+}
+legend{
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 800;
+  padding-bottom: 14px;
+}
+.form__field{
+  position: relative;
+  width: 100%;
+}
+.form__row {
+  display: flex;
+  margin-bottom: 20px
+}
+.form__column {
+  flex: 1;
+}
+.form__column:not(:first-child){
+  margin-left: 30px;
+}
+.input{
+  @include input;
+  @include placeholder{
+    color: $gray;
+  };
+}
+.input-short{
+  @include input;
+}
+.label{
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  font-weight: 800;
+  color: $gray;
+  transform: translateY(-50%);
+}
+
+.form__info{
+  font-size: 12px;
+  line-height: 18px;
+  color: $darkgray;
+}
+
+.checkbox{
+  display: none;
+}
+
+.error {
+  display: none;
+}
+.form__checkbox {
+  display: block;
+  font-size: 12px;
+  color: $darkgray;
+  padding-bottom: 12px
+}
+.form__button{
+  font-size: 14px;
+  font-weight: 800;
+  color: #000000;
+  border: 3px solid $gray;
+  padding: 15px 24px 14px 24px;
+  background-color: #ffffff;
+  cursor: pointer;
+  
+  &:hover{
+    background-color: $lightgray;
+  }
+}
