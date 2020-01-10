@@ -82,42 +82,40 @@ task('server', () => {
 
 task( "icons", () => {
   return src( "src/images/icons/*.svg")
-  .pipe(
-    svgo({
-      plugins: [
-        {
-          removeAttrs: {
-            attrs: "(fill|stroke|style|width|height|data.*)"
-          }
-        }
-      ]
-    }) 
-  )
-  .pipe(svgSprite({
-    mode: {
-      symbol: {
-        sprite: "../sprite.svg"
-      }
-    }
-  }))
+  // .pipe(
+  //   svgo({
+  //     plugins: [
+  //       {
+  //         removeAttrs: {
+  //           attrs: "(fill|stroke|style|width|height|data.*)"
+  //         }
+  //       }
+  //     ]
+  //   }) 
+  // )
+  // .pipe(svgSprite({
+  //   mode: {
+  //     symbol: {
+  //       sprite: "../sprite.svg"
+  //     }
+  //   }
+  // }))
   .pipe(dest(`${DIST_PATH}/images/icons`));
 })
 
-// task('image:build', () => {
-//   gulp.src('src/images/*') //Выберем наши картинки
-//       .pipe(imagemin({ //Сожмем их
-//           progressive: true,
-//           svgoPlugins: [{removeViewBox: false}],
-//           use: [pngquant()],
-//           interlaced: true
-//       }))
-//       .pipe(gulp.dest(path.build.img)) //И бросим в build
-//       .pipe(reload({stream: true}));
-// });
 task('image:build', () => {
-  return src('src/images/*')
-      .pipe(imagemin())
-      .pipe(dest(`${DIST_PATH}/images`))
+  return src('src/images/*.*')//Выберем наши картинки
+    .pipe(imagemin({
+      interlaced: true,
+      progressive: true,
+      optimizationLevel: 5,
+      svgoPlugins: [
+        {
+          removeViewBox: false
+        }
+      ]
+    }))
+    .pipe(dest(`${DIST_PATH}/images`))//И бросим в build
 });
 
 task ("watch", ()=> {
@@ -125,7 +123,7 @@ task ("watch", ()=> {
   watch("./src/*.html", series("copy:html"));
   watch("./src/scripts/*.js", series("scripts"));
   watch("./src/images/icons/*.svg", series("icons"));
-  watch("./src/images/*.jpg", series("image:build"));
+  watch("./src/images/*.*", series("image:build"));
 })
 
 task ("default",

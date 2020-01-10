@@ -71,6 +71,11 @@ legend{
 .form__field{
   position: relative;
   width: 100%;
+
+  &.input-filed .label{
+    top: 20px;
+    font-size: 12px;
+  }
 }
 .form__row {
   display: flex;
@@ -82,14 +87,11 @@ legend{
 .form__column:not(:first-child){
   margin-left: 30px;
 }
-.input{
+.input-text{
   @include input;
   @include placeholder{
     color: $gray;
   };
-}
-.input-short{
-  @include input;
 }
 .label{
   position: absolute;
@@ -114,6 +116,7 @@ legend{
   display: none;
 }
 .form__checkbox {
+  position: relative;
   display: block;
   font-size: 12px;
   color: $darkgray;
@@ -131,4 +134,13 @@ legend{
   &:hover{
     background-color: $lightgray;
   }
+}
+.checkbox__icon{
+  fill: #adadad;
+  width: 16px;
+  height: 16px;
+}
+.checkbox__label {
+  display: flex;
+  align-items: center;
 }
