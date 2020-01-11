@@ -13,23 +13,21 @@
       <main>
         <button>form</button>
       </main>
-      <div class="popup_wrap">
+      <div class="popup-wrapper">
         <div class="popup">
           <header class="popup__header">
             <div class="greeting">Come and say hello</div>
             <div class="title">Register for an</br>Open Day</div>
-            <div class="close">х</div>
+            <div class="close"> 
+              <svg class="close__icon"><use xlink:href="images/icons/sprite.svg#close"></use></svg>
+            </div>
           </header>
           <div class="popup__body">
             <div class="popup_text">Open Days are the perfect opportunity to get to know us, visit our campus, see acccommodation, meet academics, and get the low-down on the Essex student life.
             </div>
             <form class ="form" name="book" action="form.php">
               <legend>Book your place</legend>
-              <!-- <label class="label" for="objective">
-                <input type="text" name="objective" class="input" id="objective">
-                <span class="label__text">I am an</span>
-              </label> -->
-            
+           
               <div class="form__row">
                     <div class="form__select">
                       <label class="label" for="objective"><span class="label__text">I am an</span></label>
@@ -89,10 +87,11 @@
               </div>
               <div class="form__row">
                 <div class="form__checkbox checkbox">
-                  <input class="checkbox" type="checkbox" name="subscribe" id="subscribe">
                   <label class="checkbox__label" for="subscribe">
-                    <svg width="17" height="17" class="checkbox__icon"><use xlink:href="images/icons/sprite.svg#check-box-empty"></use></svg>
-                    I would like to receive email updates from the University</label>
+                    <input class="checkbox__input" type="checkbox" name="subscribe" id="subscribe">
+                    <!-- <svg width="17" height="17" class="checkbox__icon"><use xlink:href="images/icons/sprite.svg#check-box-empty"></use></svg> -->
+                    <span class="checkbox__text">I would like to receive email updates from the University</span>
+                  </label>
                 </div>
               </div>
               <button class="form__button" type="submit">Make A Booking</button> 
