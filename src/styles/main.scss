@@ -1,2 +1,14 @@
+/*colors*/
+$lightgray: #eaeaea;
+$gray: #adadad;
+$darkgray: #666666;
+$basecolor: #333333;
+$green: #009e4a;
+$red: #db4433;
+
+/*breakpoints*/
+$tablets: 768px;
+@import "./mics/media.scss";
+
 @import "./mics/*.scss";
 @import "./blocks/*.scss";

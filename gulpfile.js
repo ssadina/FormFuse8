@@ -24,7 +24,7 @@ sass.compiler = require('node-sass');
 
 task( "clean", () => {
   return src( `${DIST_PATH}/**/*`, { read: false }).pipe( rm() );
-  // return src( "dist/**/*", { read: false }).pipe( rm() );
+  return src( "dist/**/*", { read: false }).pipe( rm() );
 });
 
 task ("copy:html", () => {
@@ -42,7 +42,12 @@ task ("styles", () => {
     .pipe(concat('main.min.scss'))
     .pipe(sassGlob())
     .pipe(sass().on('error', sass.logError))
-    // .pipe(px2rem())
+    .pipe(px2rem({
+      dpr: 1,             // base device pixel ratio (default: 2)
+      rem: 16,            // root element (html) font-size (default: 16)
+      one: false          // whether convert 1px to rem (default: false)
+    })
+    )
     .pipe(gulpif(env === 'dev',
       autoprefixer({
         browsers: ["last 2 versions"],
@@ -57,7 +62,6 @@ task ("styles", () => {
 
 task ("scripts", () => {
   return src([...JS_LIBS,"src/scripts/*.js"])
-  // return src("src/scripts/*.js")
   .pipe(gulpif(env === 'dev', sourcemaps.init()))
   .pipe(concat('main.min.js', {newLine: ";"}))
   .pipe(gulpif(env === 'prod', babel({
@@ -104,7 +108,7 @@ task( "icons", () => {
 })
 
 task('image:build', () => {
-  return src('src/images/*.*')//Выберем наши картинки
+  return src('src/images/*.*')
     .pipe(imagemin({
       interlaced: true,
       progressive: true,
@@ -115,7 +119,7 @@ task('image:build', () => {
         }
       ]
     }))
-    .pipe(dest(`${DIST_PATH}/images`))//И бросим в build
+    .pipe(dest(`${DIST_PATH}/images`))
 });
 
 task ("watch", ()=> {

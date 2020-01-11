@@ -1,3 +1,10 @@
+html{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	@include tablets {
+		font-size: 14px;
+	}
+}
 body{
 	font-family: 'Open Sans', sans-serif;
 }
