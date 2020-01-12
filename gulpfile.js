@@ -31,7 +31,9 @@ task ("copy:html", () => {
   return src(`${SRC_PATH}/*.html`).pipe(dest(DIST_PATH)).pipe(reload({stream:true}));
   // return src("src/*.html").pipe(dest("dist")).pipe(reload({stream:true}));
 });
-
+task ("copy:php", () => {
+  return src(`${SRC_PATH}/*.php`).pipe(dest(DIST_PATH)).pipe(reload({stream:true}));
+});
 // const styles = [
 //   "node_modules/normalize.css/normalize.css",
 // ];
@@ -133,7 +135,7 @@ task ("watch", ()=> {
 task ("default",
   series(
     "clean", 
-    parallel("copy:html","scripts", "icons", "image:build","styles"), 
+    parallel("copy:html","copy:php","scripts", "icons", "image:build","styles"), 
     parallel("server", "watch")
   )
 );
@@ -141,6 +143,6 @@ task ("default",
 task ("build",
   series(
     "clean", 
-    parallel("copy:html","scripts", "icons", "image:build","styles")
+    parallel("copy:html","copy:php","scripts", "icons", "image:build","styles")
   )
 );

@@ -27,31 +27,53 @@
 
     const formRegister = document.querySelector('#form-register');
     const sendFormResister = document.querySelector('#send-form-register');
-    sendFormResister.addEventListener('click', e => {
-      e.preventDefault();
-      if (validateForm(formRegister)){
-        const data ={
-          objective: formRegister.elements.objective.value,
-          campus: formRegister.elements.campus.value,
-          date: formRegister.elements.date.value,
-          name: formRegister.elements.name.value,
-          lastname: formRegister.elements.lastname.value,
-          email: formRegister.elements.email.value,
-          // subscribe: formRegister.elements.subscribe.value,
-        }
-        // console.log(data);
-        const xhr = new XMLHttpRequest;
-        xhr.responseType = 'json';
-        xhr.open('POST', 'http://localhost:3000');
-        xhr.send(JSON.stringify(data));
-        console.log(data);
-        xhr.addEventListener('load', ()=>{
-          if(xhr.response.status){
-            console.log('Ok');
+    const popupSuccess = document.querySelector('.popup__success');
+    const popupSuccessText = document.querySelector('.success__text');
+    setTimeout(
+      sendFormResister.addEventListener('click', e => {
+        e.preventDefault();
+        if (validateForm(formRegister)){
+          const data ={
+            objective: formRegister.elements.objective.value,
+            campus: formRegister.elements.campus.value,
+            date: formRegister.elements.date.value,
+            name: formRegister.elements.name.value,
+            lastname: formRegister.elements.lastname.value,
+            email: formRegister.elements.email.value,
+            // subscribe: formRegister.elements.subscribe.value,
           }
-        })
-      }
-    })
+          // data.append("to","ssadina@list.ru");
+          // console.log(data);
+
+
+          // const xhr = new XMLHttpRequest;
+          // xhr.responseType = 'json';
+          // xhr.open('POST', 'form.php');
+          // xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+          // xhr.send(JSON.stringify(data));
+          // console.log(data);
+          // xhr.addEventListener('load', ()=>{
+          //   if(xhr.response.status){
+          //     console.log('Ok');
+          //   }
+          // })
+
+          fetch('form.php').then(function(response) {
+            if(response.ok) {
+              console.log(data);
+              popupSuccessText.textContent = "Thank you for registering";
+              popupSuccess.classList.add('success__opened');
+              const closeSuccess =document.querySelector('.button__close');
+              closeSuccess.addEventListener('click', () =>{
+                popupSuccess.classList.remove('success__opened');
+              });
+            } else {
+              popupSuccessText.textContent = "Something went wrong";
+            }
+          });
+        }
+      }), 1000);
+
     function validateForm(form){
       let valid = true;
 
