@@ -13,7 +13,7 @@
       <main>
         <button id="btn-register" class="button">Register</button>
       </main>
-      <div id="popup-register" class="popup">
+      <div id="popup-register" class="popup popup__active">
         <div class="popup__overlay">
           <div class="popup__container">
             <header class="popup__header">
@@ -26,41 +26,48 @@
             <div class="popup__body">
               <div class="popup_text">Open Days are the perfect opportunity to get to know us, visit our campus, see acccommodation, meet academics, and get the low-down on the Essex student life.
               </div>
-              <form class ="form" name="book" action="form.php">
+              <form id="form-register" class ="form" name="book" action="form.php">
                 <legend>Book your place</legend>
              
                 <div class="form__row">
                       <div class="form__select">
                         <label class="label" for="objective"><span class="label__text">I am an</span></label>
-                        <select class="dropdown">
+                        <select name="objective" class="dropdown">
                           <option value="" hidden>Select education</option>
                           <option>education 1</option>
                           <option>education 2</option>
                         </select>
                         <svg width="10" height="11" class="dropdown__icon"><use xlink:href="images/icons/sprite.svg#arrow_down"></use></svg>
+                        <svg class="form__icon form__icon__exclamation"><use xlink:href="images/icons/sprite.svg#exclamation"></use></svg>
+                        <svg class="form__icon form__icon__correct"><use xlink:href="images/icons/sprite.svg#correct"></use></svg>
                       </div>
                 </div>
                 <div class="form__row">
                   <div class="form__select">
                     <label class="label label_up" for="campus"><span class="label__text">Campus</span></label>
-                    <select class="dropdown">
+                    <select name="campus" class="dropdown">
                       <option>Colchester Campus</option>
                       <option>Colchester Campus 2</option>
                       <option>Colchester Campus 3</option>
                     </select>
                     <svg width="10" height="11" class="dropdown__icon"><use xlink:href="images/icons/sprite.svg#arrow_down"></use></svg>
+                    <svg class="form__icon form__icon__exclamation"><use xlink:href="images/icons/sprite.svg#exclamation"></use></svg>
+                    <svg class="form__icon form__icon__correct"><use xlink:href="images/icons/sprite.svg#correct"></use></svg>
                   </div>
                 </div>
                 <div class="form__row">
                   <div class="form__select">
                     <label class="label" for="date">Date<span class="required">*</span></label>
-                    <select class="dropdown">
+                    <select name="date" class="dropdown">
                       <option>Sat 12th June</option>
                       <option>Sun 13th June</option>
                       <option>Sat 19th June</option>
                     </select>
+                    <div class="error"></div>
                     <svg width="10" height="11" class="dropdown__icon"><use xlink:href="images/icons/sprite.svg#arrow_down"></use></svg>
-                    <div class="error">Invalid format</div>
+                    <svg class="form__icon form__icon__exclamation"><use xlink:href="images/icons/sprite.svg#exclamation"></use></svg>
+                    <svg class="form__icon form__icon__correct"><use xlink:href="images/icons/sprite.svg#correct"></use></svg>
+                    <!-- <div class="error">Invalid format</div> -->
                   </div>
                 </div>
                 <div class="form__row">
@@ -69,6 +76,8 @@
                       <label class="label" for="name">First Name<span class="required">*</span></label>
                       <input type="text" name="name" class="input-text" id="name" required>
                       <div class="error">Fill in this field</div>
+                      <svg class="form__icon form__icon__exclamation"><use xlink:href="images/icons/sprite.svg#exclamation"></use></svg>
+                      <svg class="form__icon form__icon__correct"><use xlink:href="images/icons/sprite.svg#correct"></use></svg>
                     </div>
                   </div>
                   <div class="form__column">
@@ -76,6 +85,8 @@
                       <label class="label" for="lastname">Last Name<span class="required">*</span></label>
                       <input type="text" name="lastname" class="input-text" id="lastname" required>
                       <div class="error">Invalid format</div>
+                      <svg class="form__icon form__icon__exclamation"><use xlink:href="images/icons/sprite.svg#exclamation"></use></svg>
+                      <svg class="form__icon form__icon__correct"><use xlink:href="images/icons/sprite.svg#correct"></use></svg>
                     </div>
                   </div>
                 </div>
@@ -84,6 +95,8 @@
                     <label class="label" for="email">Email Address<span class="required">*</span></label>
                     <input type="email" name="email" class="input-text" id="email" required>
                     <div class="error">Invalid format</div>
+                    <svg class="form__icon form__icon__exclamation"><use xlink:href="images/icons/sprite.svg#exclamation"></use></svg>
+                    <svg class="form__icon form__icon__correct"><use xlink:href="images/icons/sprite.svg#correct"></use></svg>
                   </div>
                 </div>
                 <div class="form__row">
@@ -95,14 +108,14 @@
                     </label>
                   </div>
                 </div>
-                <button class="form__button button" type="submit">Make A Booking</button> 
+                <button id="send-form-register" class="form__button button" type="submit">Make A Booking</button> 
                 <p class="form__info">
                   The information provided by you will be held by the University of Essex in accordance with the University's Data protection Policy and may be used for the University's marketing purposes. On occasion we may contact you to advertise events with information relevant to student recruitment. If you do not wish to receive this information, please select the opt out function which can be found at the foot of your confirmation email. You will receive this email within 24 hours of registering.
                 </p>
               </form>
             </div>
           </div>
-        </>
+        </div>
       </div>
     </div>
 

@@ -126,6 +126,25 @@ legend{
     padding-bottom: 12px
   }
 
+  &__icon {
+    display: none;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 50%;
+    right: -23px;
+    transform: translateY(-50%);
+    &__active{
+      display: block;
+    }
+    &__exclamation{
+      fill: $red;
+    }
+    &__correct{
+      fill: $green;
+    }
+}
+
 }
 .button{
     font-size: 14px;
@@ -155,13 +174,14 @@ legend{
   transform: translateY(-50%);
 }
 .error {
-  display: none;
+  // display: none;
   position: absolute;
   font-size: 12px;
   font-weight: 600;
   color: $red;
 }
 .checkbox{
+  margin-top: 10px;
   &__label {
     display: flex;
     align-items: center;
