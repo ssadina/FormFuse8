@@ -173,7 +173,6 @@ legend{
   transform: translateY(-50%);
 }
 .error {
-  // display: none;
   position: absolute;
   font-size: 12px;
   font-weight: 600;
@@ -187,7 +186,6 @@ legend{
   }
   &__text{
     padding-left: 20px;
-    // text-align: center;
     &:before{
       content: '';
       display: inline-block;
@@ -235,10 +233,6 @@ legend{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-    // height: 100vh;
-    // width: 100vh;
     background: #fff;
     height: 160px;
     width: 300px;

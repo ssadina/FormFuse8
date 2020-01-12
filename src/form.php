@@ -1,4 +1,4 @@
-<?php
+<?/*php
   $name = trim(strip_tags($_POST["name"]));
   $sex = trim(strip_tags($_POST["sex"]));
   $email = trim(strip_tags($_POST["email"]));
@@ -12,4 +12,5 @@
     mail($email, $subject, $msg, $headers);
     echo "Спасибо! Вы успешно зарегистрировались.";
     }
+    */
 ?>

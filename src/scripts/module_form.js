@@ -40,23 +40,8 @@
             name: formRegister.elements.name.value,
             lastname: formRegister.elements.lastname.value,
             email: formRegister.elements.email.value,
-            // subscribe: formRegister.elements.subscribe.value,
+            subscribe: formRegister.elements.subscribe.value,
           }
-          // data.append("to","ssadina@list.ru");
-          // console.log(data);
-
-
-          // const xhr = new XMLHttpRequest;
-          // xhr.responseType = 'json';
-          // xhr.open('POST', 'form.php');
-          // xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-          // xhr.send(JSON.stringify(data));
-          // console.log(data);
-          // xhr.addEventListener('load', ()=>{
-          //   if(xhr.response.status){
-          //     console.log('Ok');
-          //   }
-          // })
 
           fetch('form.php').then(function(response) {
             if(response.ok) {
