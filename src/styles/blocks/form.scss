@@ -1,19 +1,28 @@
 .container{
   position: relative;
 }
-.popup-wrapper{
+.popup {
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
-  bottom: 0;
-}
-.popup {
-  max-width: 728px;
-  margin: 0 auto;
-  position: relative;
-  padding-bottom: 40px;
-  background: $lightgray no-repeat;
+  z-index: 999;
+  opacity: 0;
+  top: -10000px;
+  &__active{
+    opacity: 1;
+    top: 0px;
+  }
+  &__overlay{
+    background-color: rgba(0,0,0,0.8);
+  }
+  &__container{
+    max-width: 728px;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 40px;
+    background: $lightgray no-repeat;
+  }
 
   &__body{
     max-width: 648px;
@@ -117,7 +126,8 @@ legend{
     padding-bottom: 12px
   }
 
-  &__button{
+}
+.button{
     font-size: 14px;
     font-weight: 800;
     color: #000000;
@@ -129,7 +139,6 @@ legend{
     &:hover{
       background-color: $lightgray;
     }
-  }
 }
 .input-text{
   @include input;

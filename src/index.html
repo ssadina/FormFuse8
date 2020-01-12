@@ -11,96 +11,98 @@
   <body>
     <div class="container">
       <main>
-        <button>form</button>
+        <button id="btn-register" class="button">Register</button>
       </main>
-      <div class="popup-wrapper">
-        <div class="popup">
-          <header class="popup__header">
-            <div class="greeting">Come and say hello</div>
-            <div class="title">Register for an</br>Open Day</div>
-            <div class="close"> 
-              <svg class="close__icon"><use xlink:href="images/icons/sprite.svg#close"></use></svg>
-            </div>
-          </header>
-          <div class="popup__body">
-            <div class="popup_text">Open Days are the perfect opportunity to get to know us, visit our campus, see acccommodation, meet academics, and get the low-down on the Essex student life.
-            </div>
-            <form class ="form" name="book" action="form.php">
-              <legend>Book your place</legend>
-           
-              <div class="form__row">
-                    <div class="form__select">
-                      <label class="label" for="objective"><span class="label__text">I am an</span></label>
-                      <select class="dropdown">
-                        <option value="" hidden>Select education</option>
-                        <option>education 1</option>
-                        <option>education 2</option>
-                      </select>
-                      <svg width="10" height="11" class="dropdown__icon"><use xlink:href="images/icons/sprite.svg#arrow_down"></use></svg>
-                    </div>
+      <div id="popup-register" class="popup">
+        <div class="popup__overlay">
+          <div class="popup__container">
+            <header class="popup__header">
+              <div class="greeting">Come and say hello</div>
+              <div class="title">Register for an</br>Open Day</div>
+              <div id="close-register" class="close"> 
+                <svg class="close__icon"><use xlink:href="images/icons/sprite.svg#close"></use></svg>
               </div>
-              <div class="form__row">
-                <div class="form__select">
-                  <label class="label label_up" for="campus"><span class="label__text">Campus</span></label>
-                  <select class="dropdown">
-                    <option>Colchester Campus</option>
-                    <option>Colchester Campus 2</option>
-                    <option>Colchester Campus 3</option>
-                  </select>
-                  <svg width="10" height="11" class="dropdown__icon"><use xlink:href="images/icons/sprite.svg#arrow_down"></use></svg>
+            </header>
+            <div class="popup__body">
+              <div class="popup_text">Open Days are the perfect opportunity to get to know us, visit our campus, see acccommodation, meet academics, and get the low-down on the Essex student life.
+              </div>
+              <form class ="form" name="book" action="form.php">
+                <legend>Book your place</legend>
+             
+                <div class="form__row">
+                      <div class="form__select">
+                        <label class="label" for="objective"><span class="label__text">I am an</span></label>
+                        <select class="dropdown">
+                          <option value="" hidden>Select education</option>
+                          <option>education 1</option>
+                          <option>education 2</option>
+                        </select>
+                        <svg width="10" height="11" class="dropdown__icon"><use xlink:href="images/icons/sprite.svg#arrow_down"></use></svg>
+                      </div>
                 </div>
-              </div>
-              <div class="form__row">
-                <div class="form__select">
-                  <label class="label" for="date">Date<span class="required">*</span></label>
-                  <select class="dropdown">
-                    <option>Sat 12th June</option>
-                    <option>Sun 13th June</option>
-                    <option>Sat 19th June</option>
-                  </select>
-                  <svg width="10" height="11" class="dropdown__icon"><use xlink:href="images/icons/sprite.svg#arrow_down"></use></svg>
-                  <div class="error">Invalid format</div>
-                </div>
-              </div>
-              <div class="form__row">
-                <div class="form__column">
-                  <div class="form__field">
-                    <label class="label" for="name">First Name<span class="required">*</span></label>
-                    <input type="text" name="name" class="input-text" id="name" required>
-                    <div class="error">Fill in this field</div>
+                <div class="form__row">
+                  <div class="form__select">
+                    <label class="label label_up" for="campus"><span class="label__text">Campus</span></label>
+                    <select class="dropdown">
+                      <option>Colchester Campus</option>
+                      <option>Colchester Campus 2</option>
+                      <option>Colchester Campus 3</option>
+                    </select>
+                    <svg width="10" height="11" class="dropdown__icon"><use xlink:href="images/icons/sprite.svg#arrow_down"></use></svg>
                   </div>
                 </div>
-                <div class="form__column">
-                  <div class="form__field">
-                    <label class="label" for="lastname">Last Name<span class="required">*</span></label>
-                    <input type="text" name="lastname" class="input-text" id="lastname" required>
+                <div class="form__row">
+                  <div class="form__select">
+                    <label class="label" for="date">Date<span class="required">*</span></label>
+                    <select class="dropdown">
+                      <option>Sat 12th June</option>
+                      <option>Sun 13th June</option>
+                      <option>Sat 19th June</option>
+                    </select>
+                    <svg width="10" height="11" class="dropdown__icon"><use xlink:href="images/icons/sprite.svg#arrow_down"></use></svg>
                     <div class="error">Invalid format</div>
                   </div>
                 </div>
-              </div>
-              <div class="form__row">
-                <div class="form__field">
-                  <label class="label" for="email">Email Address<span class="required">*</span></label>
-                  <input type="email" name="email" class="input-text" id="email" required>
-                  <div class="error">Invalid format</div>
+                <div class="form__row">
+                  <div class="form__column">
+                    <div class="form__field">
+                      <label class="label" for="name">First Name<span class="required">*</span></label>
+                      <input type="text" name="name" class="input-text" id="name" required>
+                      <div class="error">Fill in this field</div>
+                    </div>
+                  </div>
+                  <div class="form__column">
+                    <div class="form__field">
+                      <label class="label" for="lastname">Last Name<span class="required">*</span></label>
+                      <input type="text" name="lastname" class="input-text" id="lastname" required>
+                      <div class="error">Invalid format</div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="form__row">
-                <div class="form__checkbox checkbox">
-                  <label class="checkbox__label" for="subscribe">
-                    <input class="checkbox__input" type="checkbox" name="subscribe" id="subscribe">
-                    <!-- <svg width="17" height="17" class="checkbox__icon"><use xlink:href="images/icons/sprite.svg#check-box-empty"></use></svg> -->
-                    <span class="checkbox__text">I would like to receive email updates from the University</span>
-                  </label>
+                <div class="form__row">
+                  <div class="form__field">
+                    <label class="label" for="email">Email Address<span class="required">*</span></label>
+                    <input type="email" name="email" class="input-text" id="email" required>
+                    <div class="error">Invalid format</div>
+                  </div>
                 </div>
-              </div>
-              <button class="form__button" type="submit">Make A Booking</button> 
-              <p class="form__info">
-                The information provided by you will be held by the University of Essex in accordance with the University's Data protection Policy and may be used for the University's marketing purposes. On occasion we may contact you to advertise events with information relevant to student recruitment. If you do not wish to receive this information, please select the opt out function which can be found at the foot of your confirmation email. You will receive this email within 24 hours of registering.
-              </p>
-            </form>
+                <div class="form__row">
+                  <div class="form__checkbox checkbox">
+                    <label class="checkbox__label" for="subscribe">
+                      <input class="checkbox__input" type="checkbox" name="subscribe" id="subscribe">
+                      <!-- <svg width="17" height="17" class="checkbox__icon"><use xlink:href="images/icons/sprite.svg#check-box-empty"></use></svg> -->
+                      <span class="checkbox__text">I would like to receive email updates from the University</span>
+                    </label>
+                  </div>
+                </div>
+                <button class="form__button button" type="submit">Make A Booking</button> 
+                <p class="form__info">
+                  The information provided by you will be held by the University of Essex in accordance with the University's Data protection Policy and may be used for the University's marketing purposes. On occasion we may contact you to advertise events with information relevant to student recruitment. If you do not wish to receive this information, please select the opt out function which can be found at the foot of your confirmation email. You will receive this email within 24 hours of registering.
+                </p>
+              </form>
+            </div>
           </div>
-        </div>
+        </>
       </div>
     </div>
 
